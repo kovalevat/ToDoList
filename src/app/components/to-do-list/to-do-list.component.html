@@ -1,0 +1,22 @@
+<div class="container">
+  <br>
+  <h4>ToDo List</h4>
+
+
+<h5>List:</h5>
+  <form (submit)="AddOpt(option.value)">
+    <div class="form-group">
+      <label for="option">Новое дело!</label>
+      <input type="text" id="option" placeholder="Действие" class="form-control" #option>
+      <br>
+      <button type="submit" class="btn btn-outline-success">Добавить</button>
+    </div>
+  </form>
+  <div class="alert alert-warning">
+    <ul>
+      <li *ngFor="let opt of options">{{opt}}
+<button class="btn btn-warning btn-sm"(click)='DeleteOpt(opt)'>x</button>
+      </li>
+    </ul>
+  </div>
+</div>
