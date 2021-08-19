@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail information</title>
+</head>
+<body>
+
+<p th:text="${task.getId()}">VALUE</p>
+<p th:text="${task.getPriority()}">VALUE</p>
+<p th:text="${task.getName()}">VALUE</p>
+<p th:text="${task.getDescription()}">VALUE</p>
+<p th:text="${task.isDone()}">VALUE</p>
+<br/>
+<a th:href="@{/todolist/{id}/edit(id=${task.getId()})}">Edit</a>
+<br/>
+<br/>
+<form th:method="DELETE" th:action="@{/todolist/{id}(id=${task.getId()})}">
+    <input type="submit" value="Delete"/>
+</form>
+</body>
+</html>

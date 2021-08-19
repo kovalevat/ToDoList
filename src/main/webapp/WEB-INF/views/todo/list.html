@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Case</title>
+</head>
+<body>
+ <div th:each="task : ${list}">
+    <a style="color: black" th:href="@{/todolist/{id}(id=${task.getId()})}" th:text="${task.getId()+', '+task.getPriority()+', '+task.getName()}">user</a>
+
+</div>
+<br/>
+<a   style="color: blue" href="/todolist/new">Create new task</a>
+</body>
+</html>

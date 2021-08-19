@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit task</title>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/todolist/{id}(id=${task.getId()})}" th:object="${task}">
+  <label for="priority">Enter priority:</label>
+  <input type="text" th:field="*{priority}" id="priority"></input>
+  <br/>
+  <label for="name">Enter task:</label>
+  <input type="text" th:field="*{name}" id="name"></input>
+  <div th:if="${#fields.hasErrors('Name')}" th:errors="*{Name}">Name error</div>
+  <br/>
+  <label for="desc">Enter description:</label>
+  <input type="text" th:field="*{description}" id="desc"></input>
+  <br/>
+  <label for="done">Enter done:</label>
+  <input type="checkbox" th:field="*{done}" id="done"></input>
+  <br/>
+  <input type="submit" value="Update"/>
+</form>
+</body>
+</html>
